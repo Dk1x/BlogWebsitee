@@ -1,0 +1,14 @@
+{% extends "blog/master.html" %}
+{% block title %}
+Blog Website
+{% endblock %}
+{% block content %}
+ <p><a href="/">HOME</a></p>
+ <h1>users</h1>
+ <ul>
+     {% for user in users %}
+     <li>
+       <a href="{% url 'user_detail' user.id %}">{{ user.first_name }}</a>     </li>
+     {% endfor %}
+    </ul>
+{% endblock %}

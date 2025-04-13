@@ -1,0 +1,15 @@
+{% extends "blog/master.html" %}
+{% block title %}
+ Blog Website
+{% endblock %}
+{% block content %}
+
+<p><a href="/">HOME</a></p>
+<h2>All Categories</h2>
+<ul>
+  {% for category in categories %}
+    <li>
+     <a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock  %}

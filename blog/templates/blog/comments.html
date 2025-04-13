@@ -1,0 +1,19 @@
+{% extends 'blog/master.html' %}
+
+{% block content %}
+<h2>Comments List</h2>
+<table border="1">
+    <tr>
+        <th>Comment Content</th>
+        <th>Post ID</th>
+    </tr>
+    {% for comment in comments %}
+    <tr>
+        <td>{{ comment.content }}</td>
+        <td>{{ comment.post.id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'main' %}">Back to Main</a>
+{% endblock %}

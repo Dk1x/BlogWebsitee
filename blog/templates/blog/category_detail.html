@@ -1,0 +1,9 @@
+{% extends 'blog/master.html' %}
+
+{% block title %}Category Detail{% endblock %}
+
+{% block content %}
+<h2>{{ category.name }}</h2>
+<p>ID: {{ category.id }}</p>
+p>Back to <a href="/categories">categories</a></p>
+{% endblock content %}

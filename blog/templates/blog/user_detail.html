@@ -1,0 +1,9 @@
+{% extends "blog/master.html" %}
+{% block title %}
+ Details about {{ user.username }} {{ user.email }}
+{% endblock %}
+{% block content %}
+<p>username:{{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Back to <a href="/users">users</a></p>
+{% endblock %}

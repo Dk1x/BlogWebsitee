@@ -1,0 +1,21 @@
+{% extends 'blog/master.html' %}  {# This tells Django to use the master template as a base #}
+
+{% block title %}Blogs{% endblock %}  {# This sets the page title block to "Blogs" #}
+
+{% block content %}
+  <h2>All Blog Posts</h2>
+  <ul>
+    {# Loop through each post in the "posts" list passed from the view #}
+    {% for post in posts %}
+      <li>
+        {# Display the post title as a link to the blog details page, and show the date #}
+        <a href="{% url 'blog_details' post.id %}">{{ post.title }}</a> - {{ post.date_published }}
+      </li>
+    {% empty %}
+      <li>No blog posts available.</li>  {# Message to show if there are no posts #}
+    {% endfor %}
+  </ul>
+
+  {# Button to go back to the main page #}
+  <a href="{% url 'main' %}"><button>Back to Main Page</button></a>
+{% endblock %}
